@@ -1,0 +1,259 @@
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li {
+ padding: 0; margin: 0;
+}
+
+body { 
+
+background-color:white;
+ font: 100% Arial; 
+font-size: 100%; 
+font-weight: normal;
+padding-bottom: 30px;
+text-align: left; 
+color:white; 
+font-weight: normal;
+}
+
+ footer {
+ display:block;
+}
+
+#wrapper {
+position:relative;
+ top:0; left:0; 
+width: 90%;
+min-width: 900px;
+ margin:auto;
+text-align:center;
+ background-color: white;
+box-shadow: 5px 5px 5px gray;
+}
+header { 
+background-color:black;
+ display: block;
+ height:87px;
+ color:white; 
+padding-top:0px;
+padding-bottom: 6px;
+}
+header img{
+float: right;
+margin-right: 8px;
+margin-top: 8px;
+height:90%;
+
+}
+
+
+#graph{
+    background-color:white; 
+    height:90%;
+    width:97%;
+    margin-left:10px;
+    margin-top: 10px;
+}
+
+
+#comment{
+   padding-left: 30px;
+    text-align: left;  
+    padding-top: 20px;
+    color: black;
+}
+
+#left{
+    background-color:#CACFD2;
+    width:20%;
+    float: left;
+    height:580px;
+    margin-left: 0px;
+}
+
+#right{
+    background-color:#CACFD2;
+    width:80%;
+    height: 580px;
+    float: left;
+}
+ #content ul{
+     margin-left: 200px;
+text-align: left;
+padding: 15px 30px 10px;
+}
+
+h1
+ { 
+ font-family: "Times New Roman", Times, serif;
+position: absolute;
+margin-left: 100px;
+font-size:250%;
+ font-weight:bold; 
+margin-top:10px;
+ color: white;
+}
+h2{
+position: absolute;
+margin-left: 100px;
+font-size:150%;
+margin-top:48px;
+color: #CA5F5D;
+padding-top: 5px;
+padding-bottom: 5px;
+text-align: left; 
+
+}
+h3{
+color: black;
+width: 200px;
+padding-top: 5px;
+padding-bottom: 5px;
+text-align: left; 
+margin-left: 30px;
+}
+mark{
+    color: #CA5F5D;
+    font-size:120%;
+    background-color: #CACFD2;
+    font-weight:bold; 
+}
+.headerG{
+text-align: center;
+font-weight: bold;
+text-decoration: underline;
+padding-bottom: 10px;
+}
+#menu{
+   padding-left:750px;
+display:block;
+height:36px;
+font-size: 11.5px;
+font-weight:bold;
+background: #CACFD2;
+font-family:Helvetica,Arial,Verdana,sans-serif;
+border-top:1px ;
+}
+
+#menu ul{
+min-width: 900px;
+margin:0;
+padding: 0;
+list-style-type:none;
+}
+
+#menu li{
+float:left;
+margin:0;
+padding: 0;
+}
+
+#menu li a{
+float:left;
+color: black;
+text-decoration:none;
+padding:12px 20px 0 20px;
+height:24px;
+}
+#menu li a:hover{
+    color:#CA5F5D;
+
+}
+#menu li a.current, #menu li a.current:hover{
+color:#CA5F5D;
+}
+
+/*set images to have no borders*/
+img { border:none;
+}
+
+     
+
+footer {
+clear:both;
+margin: auto; 
+font-weight:bold; 
+color: white;
+ padding: 5px 0 0 4px; 
+text-align:center; 
+background-color: #c6c8c8;
+ color:black; 
+ height: 20px;
+}
+
+
+.axis path, .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+  }
+  .axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+    color: black;
+  }
+  #tooltip {
+    position: absolute;
+    text-align: center;
+    width: 40px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    margin-top:100px;
+    color: black;
+  }
+  #tooltip.hidden {
+    display: none;
+  }
+  #tooltip p {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: black;
+  }
+  .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  .left:hover{
+        color:#CA5F5D;
+  }
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .legend-row {
+    height: 50px;
+  }
+
+  .legend-element {
+    width:10px;
+    height:20px;
+    float: left;
+  }
+  #orange {
+      color: #ff7f0e;
+
+  }
+  #green{
+      color: #2ca02c
+  }
+  #legend{
+color: black;
+
+  }
