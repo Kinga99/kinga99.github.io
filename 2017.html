@@ -406,28 +406,6 @@ What is going on with <mark>obersity</mark> in America? It has skyrocketed over 
         .attr('class', 'axis')
         .call(yAxis);
 
-        var legend = d3.select("body")
-        .append('div')
-        .attr('id', 'legend')
-        .attr('class', 'row legend-row');
-        legend.append('div')
-        .attr('class', 'col-sm-4');
-        var legendColor1 = legend.append('div')
-        .attr('class', 'col-sm-4');
-        legendColor1.append('div')
-        .attr('class', 'legend-element')
-        .attr('style', 'background-color:'+colours(0));
-        legendColor1.append('div')
-        .attr('style', 'margin-left: 150px;')
-        .text(series[0]);
-        var legendColor2 = legend.append('div')
-        .attr('class', 'col-sm-4');
-        legendColor2.append('div')
-        .attr('class', 'legend-element')
-        .attr('style', 'background-color:'+colours(1));
-        legendColor2.append('div')
-        .attr('style', 'margin-left: 170px;')
-        .text(series[1]);
 
       }
 
