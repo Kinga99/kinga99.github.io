@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang=en>
+<head>
+<title>Data Visualization Final Project</title>
+<meta charset=utf-8>
+<link rel="stylesheet" type="text/css" href="FinalProject.css">
+   <script src="http://d3js.org/d3.v3.js"></script>
+ 
+</head>
+
+<body id="content">
+<div id="wrapper">
+
+<header>
+    <h1>Number of Deaths by Risk Factor </h1>
+    <h2>United States </h2>
+<img src="Cigarettes.PNG" >
+<img src="Image1.PNG" >
+<img src="Image2.PNG">
+<img src="Image3.PNG" >
+<img src="Image5.PNG">
+</header>
+
+<div id="menu">
+  <ul>
+    <li><a href="index.html" title="1990" >&#9664 1990</a></li>
+    <li><a href="2000.html" title="2000" >2000</a></li>
+<li><a href="2017.html" title="2017" class="current" > 2017 &#9658</a></li>    
+  </ul>
+</div>
+<!--[if lte IE 7]>
+<br>
+<![endif]-->
+
+
+ <div id="left"><h3>...and 2017</h3>
+
+<p id="comment">
+What is going on with <mark>obersity</mark> in America? It has skyrocketed over the last 30 years!
+<mark>High blood sugar</mark> is now causing 40% more deaths than in 1990.
+<mark>Drug use</mark> killed 300% more people than 30 years ago, and <mark>alcohol use</mark> is another huge contributor
+ to the death toll. What is even more interesting, is that the <mark>other</mark> causes of death
+ in America have doubled since 1990. This category includes numbers of deaths caused by <mark>discontinued breaskfeeding, </mark> 
+ <mark>unsafe water drinking</mark>, <mark>no access to handwashing facility</mark>, and <mark>poor sanitation</mark>. 
+ These numbers are terryfing!
+</p>
+
+</div>
+<div id="right">
+<svg id="graph" ></svg>
+<p id="legend"><mark id="orange">&#9632</mark>Increesed since 1990 &nbsp;&nbsp;&nbsp;&nbsp;   <mark id="green">&#9632</mark>Decreesed since 1990  </p>
+</div>
+    <script>
+      var margins = {
+        top: 20,
+        left: 150,
+        right: 150,
+        bottom: 10
+      };
+      var legendPanel = {
+        width: 100
+      };
+
+      var dataset = [{
+        data: [{
+        yValue: 'Smoking',
+        xValue: 422011
+      }, {
+        yValue: 'High blood presure',
+        xValue: 454347
+      }, {
+        yValue: 'High cholesterol',
+        xValue: 215111
+      }, {
+        yValue: 'Obesity',
+        xValue: 255035
+      }, {
+        yValue: 'High blood sugar',
+        xValue: 236444
+      }, {
+         yValue: 'Diet low in whole grains',
+        xValue: 133333
+      }, {
+        yValue: 'Diet low in nuts and seeds',
+        xValue: 98873
+      }, {
+        yValue: 'Outdoor air pollution',
+        xValue: 105517
+      }, {
+        yValue: 'Low physical activity',
+        xValue: 72957
+      }, {
+        yValue: 'Diet low in vegetables',
+        xValue: 69406
+      }, {
+        yValue: 'Diet low in fruits',
+        xValue: 71920
+      }, {
+        yValue: 'Diet low in omega-3',
+        xValue: 56909
+      }, {
+        yValue: 'Diet low in fiber',
+        xValue: 50936
+      }, {
+        yValue: 'Diet high in sodium',
+        xValue: 77534
+      }, {
+        yValue: 'Diet low in legumes',
+        xValue: 37577
+      }, {
+        yValue: 'Secondhand smoke',
+        xValue: 25924
+      }, {
+        yValue: 'Alcohol use',
+        xValue: 30812
+    }, {
+        yValue: 'Unsafe sex',
+        xValue: 14388
+      }, {
+        yValue: 'Drug use',
+        xValue: 24517
+      }, {
+        yValue: 'Low birth weight',
+        xValue: 8706
+    }, {
+        yValue: 'Diet low in calcium',
+        xValue: 9526
+    }, {
+        yValue: 'Other',
+        xValue: 15697
+        }],
+        name: ' in 1990'
+        }, {
+        data: [{
+        yValue: 'Smoking',
+        xValue: 0
+      }, {
+          yValue: 'High blood presure',
+        xValue: 0
+      }, {
+        yValue: 'High cholesterol',
+        xValue: 0
+      }, {
+        yValue: 'Obesity',
+        xValue: 153796
+      }, {
+        yValue: 'High blood sugar',
+        xValue: 183883
+      }, {
+         yValue: 'Diet low in whole grains',
+        xValue: 0
+      }, {
+        yValue: 'Diet low in nuts and seeds',
+        xValue: 0
+      }, {
+        yValue: 'Outdoor air pollution',
+        xValue: 4112
+      }, {
+        yValue: 'Low physical activity',
+        xValue: 0
+      }, {
+        yValue: 'Diet low in vegetables',
+        xValue: 0
+      }, {
+        yValue: 'Diet low in fruits',
+        xValue: 13230
+      }, {
+        yValue: 'Diet low in omega-3',
+        xValue: 0
+      }, {
+        yValue: 'Diet low in fiber',
+        xValue: 0
+      }, {
+        yValue: 'Diet high in sodium',
+        xValue: 38844
+      }, {
+        yValue: 'Diet low in legumes',
+        xValue: 0
+      }, {
+        yValue: 'Secondhand smoke',
+        xValue: 0
+      }, {
+        yValue: 'Alcohol use',
+        xValue: 50172
+    }, {
+        yValue: 'Unsafe sex',
+        xValue: 0
+      }, {
+        yValue: 'Drug use',
+        xValue: 80420
+      }, {
+        yValue: 'Low birth weight',
+        xValue: 0
+    }, {
+        yValue: 'Diet low in calcium',
+        xValue: 1316
+    }, {
+        yValue: 'Other',
+        xValue: 16076
+        }],
+        name: ' in 2017 increased by '
+    }, {
+        data: [{
+            yValue: 'Smoking',
+        xValue: 130950
+      }, {
+          yValue: 'High blood presure',
+        xValue: 39322
+      }, {
+        yValue: 'High cholesterol',
+        xValue: 86825
+      }, {
+        yValue: 'Obesity',
+        xValue: 0
+      }, {
+        yValue: 'High blood sugar',
+        xValue: 0
+      }, {
+         yValue: 'Diet low in whole grains',
+        xValue: 4593
+      }, {
+        yValue: 'Diet low in nuts and seeds',
+        xValue: 28424
+      }, {
+        yValue: 'Outdoor air pollution',
+        xValue: 0
+      }, {
+        yValue: 'Low physical activity',
+        xValue: 72957
+      }, {
+        yValue: 'Diet low in vegetables',
+        xValue: 69406
+      }, {
+        yValue: 'Diet low in fruits',
+        xValue: 0
+      }, {
+        yValue: 'Diet low in omega-3',
+        xValue: 14181
+      }, {
+        yValue: 'Diet low in fiber',
+        xValue: 10295
+      }, {
+        yValue: 'Diet high in sodium',
+        xValue: 0
+      }, {
+        yValue: 'Diet low in legumes',
+        xValue: 1677
+      }, {
+        yValue: 'Secondhand smoke',
+        xValue: 9623
+      }, {
+        yValue: 'Alcohol use',
+        xValue: 0
+    }, {
+        yValue: 'Unsafe sex',
+        xValue: 15072
+      }, {
+        yValue: 'Drug use',
+        xValue: 0
+      }, {
+        yValue: 'Low birth weight',
+        xValue: 6049
+    }, {
+        yValue: 'Diet low in calcium',
+        xValue: 0
+    }, {
+        yValue: 'Other',
+        xValue: 0
+        }],
+        name: ' in 2000 decresed by '
+      
+      }];
+      var series = dataset.map(function (d) {
+        return d.name;
+      });
+      var numberOfRecords = 0;
+      var dataset = dataset.map(function (d) {
+        numberOfRecords = 0;
+        return d.data.map(function (o, i) {
+          numberOfRecords++;
+          return {
+            y: o.xValue,
+            x: o.yValue,
+            name: d.name
+          };
+        });
+      });
+
+
+      d3.select(window).on("resize", throttle);
+
+      var stack = d3.layout.stack();
+
+      stack(dataset);
+
+      var dataset = dataset.map(function (group) {
+        return group.map(function (d) {
+          // Invert the x and y values, and y0 becomes x0
+          return {
+            x: d.y,
+            y: d.x,
+            x0: d.y0,
+            name:d.name
+          };
+        });
+      });
+
+      var yValues = dataset[0].map(function (d) {
+        return d.y;
+      });
+
+      var xMax = d3.max(dataset, function (group) {
+        return d3.max(group, function (d) {
+          return d.x + d.x0;
+        });
+      });
+
+      var tooltip = d3.select("body")
+      .append('div')
+      .attr('id', 'tooltip')
+      .attr('class', 'hidden');
+
+      var width = window.innerWidth - margins.left - margins.right - legendPanel.width;
+      var barHeight = 20;
+      var height = (numberOfRecords * 30) - margins.top - margins.bottom;
+
+      var svg, xScale, yScale, rects;
+      
+      draw(890, 470);
+
+      function draw(width, height) {
+      
+        svg = d3.select("#graph")
+        .append('svg')
+        .attr('width', width + margins.left + margins.right)
+        .attr('height', height + margins.top + margins.bottom)
+        .append('g')
+        .attr('transform', 'translate(' + margins.left + ',' + 10 + ')');
+      
+        xScale = d3.scale.linear()
+        .domain([0, xMax])
+        .range([0, width]);
+      
+        yScale = d3.scale.ordinal()
+        .domain(yValues)
+        .rangeRoundBands([0, height], .1);
+        var xAxis = d3.svg.axis()
+        .scale(xScale)
+        .orient('bottom');
+        var yAxis = d3.svg.axis()
+        .scale(yScale)
+        .orient('left');
+        
+        var colours = d3.scale.category10();
+        var groups = svg.selectAll('g')
+        .data(dataset)
+        .enter()
+        .append('g')
+        .style('fill', function (d, i) {
+          return colours(i) 
+
+
+        });
+
+        rects = groups.selectAll('rect')
+        .data(function (d) {
+          return d;
+        })
+        .enter()
+        .append('rect')
+        .attr('x', function (d) {
+          return xScale(d.x0);
+        })
+        .attr('y', function (d, i) {
+          return yScale(d.y);
+        })
+        .attr('height', function (d) {
+          return barHeight;
+        })
+        .attr('width', function (d) {
+          return xScale(d.x);
+        })
+        .on('mouseover', function (d) {
+      
+          var xPos = parseFloat(d3.select(this).attr('x')) / 2 + width / 2;
+          var yPos = parseFloat(d3.select(this).attr('y')) + yScale.rangeBand() / 2;
+      
+          d3.select('#tooltip')
+          .style('left', xPos + 'px')
+          .style('top', yPos + 'px')
+          .style('width', '250px')
+          .text('Deaths caused by '+d.y+'  '+d.name+': '+d.x);
+      
+          d3.select('#tooltip').classed('hidden', false);
+        })
+        .on('mouseout', function () {
+          d3.select('#tooltip').classed('hidden', true);
+        });
+
+        svg.append('g')
+        .attr('class', 'axis')
+        .attr('transform', 'translate(0,' + height + ')')
+        .call(xAxis);
+
+        svg.append('g')
+        .attr('class', 'axis')
+        .call(yAxis);
+
+        var legend = d3.select("body")
+        .append('div')
+        .attr('id', 'legend')
+        .attr('class', 'row legend-row');
+        legend.append('div')
+        .attr('class', 'col-sm-4');
+        var legendColor1 = legend.append('div')
+        .attr('class', 'col-sm-4');
+        legendColor1.append('div')
+        .attr('class', 'legend-element')
+        .attr('style', 'background-color:'+colours(0));
+        legendColor1.append('div')
+        .attr('style', 'margin-left: 150px;')
+        .text(series[0]);
+        var legendColor2 = legend.append('div')
+        .attr('class', 'col-sm-4');
+        legendColor2.append('div')
+        .attr('class', 'legend-element')
+        .attr('style', 'background-color:'+colours(1));
+        legendColor2.append('div')
+        .attr('style', 'margin-left: 170px;')
+        .text(series[1]);
+
+      }
+
+      function redraw() {
+        width = window.innerWidth - margins.left - margins.right - legendPanel.width;
+        d3.select('svg').remove();
+        d3.select('#legend').remove();
+        draw(width,height);
+      }
+
+      var throttleTimer;
+      function throttle() {
+        window.clearTimeout(throttleTimer);
+        throttleTimer = window.setTimeout(function() {
+          redraw();
+        }, 200);
+      }
+
+      
+    </script>
+<footer>
+<div id="footer2">Copyright &#169; 2020<br/>
+
+</div>
+</footer>
+
+</div>
+</body>
+</html>
