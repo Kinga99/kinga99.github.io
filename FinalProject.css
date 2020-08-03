@@ -206,6 +206,7 @@ background-color: #c6c8c8;
     pointer-events: none;
     margin-top:100px;
     color: black;
+  
   }
   #tooltip.hidden {
     display: none;
@@ -237,15 +238,6 @@ background-color: #c6c8c8;
     -webkit-transform: rotate(-45deg);
   }
   
-  .legend-row {
-    height: 50px;
-  }
-
-  .legend-element {
-    width:10px;
-    height:20px;
-    float: left;
-  }
   #orange {
       color: #ff7f0e;
 
