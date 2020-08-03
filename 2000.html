@@ -4,6 +4,7 @@
 <title>Data Visualization Final Project</title>
 <meta charset=utf-8>
 <link rel="stylesheet" type="text/css" href="FinalProject.css">
+<script src="http://d3js.org/d3.v3.js"></script>
 <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 
@@ -393,7 +394,7 @@ are now killing more people than in the last 10 years.
         .on('mouseout', function () {
           d3.select('#tooltip').classed('hidden', true);
         });
-
+       
         svg.append('g')
         .attr('class', 'axis')
         .attr('transform', 'translate(0,' + height + ')')
@@ -402,14 +403,6 @@ are now killing more people than in the last 10 years.
         svg.append('g')
         .attr('class', 'axis')
         .call(yAxis);
-
-
-
-
-
-
-
-
 
 
       }
