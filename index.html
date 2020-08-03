@@ -5,6 +5,7 @@
 <title>Data Visualization Final Project</title>
 <meta charset=utf-8>
 <link rel="stylesheet" type="text/css" href="FinalProject.css">
+<script src="http://d3js.org/d3.v3.js"></script>
 <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 
@@ -260,25 +261,7 @@
       .call(yAxis);
 
         }
-        const annotations = [
-  {
-    note: {
-      label: "Here is the annotation label",
-      title: "Annotation title"
-    },
-    x: 150,
-    y: 50,
-    dy: 100,
-    dx: 100
-  }
-]
-
-// Add annotation to the chart
-const makeAnnotations = d3.annotation()
-  .annotations(annotations)
-d3.select("#graph")
-  .append("g")
-  .call(makeAnnotations)
+       
         
 
     function redraw() {
